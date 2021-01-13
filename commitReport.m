@@ -18,7 +18,9 @@ for ii = 1:length(model_names)
     movefile(reportPath,[file_path filesep model_names{ii} '.html']);
     
 end
-[status,~] = dos('git commit -a -m "Jenkins Commit Model Advisor Report"');
+cd(file_path);
+[status,~] = dos('git add .');
+[status,~] = dos('git commit -m "Jenkins Commit Model Advisor Report"');
 assert(status == 0,'Git commit Failed');
 [~,message] = dos('git branch --show-current');
 
