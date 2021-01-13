@@ -1,9 +1,9 @@
 function commitReport
 % Run model advisor for sim_autotrans.
-file_path = mfilepath(fullfile);
-report_dir = [file_path fileparts 'Report'];
-model_dir = [file_path fileparts 'ModelFile'];
-addpath(model_dir);
+file_path = fileparts(mfilename('fullpath'));
+report_dir = [file_path filesep 'Report'];
+model_dir = [file_path filesep 'ModelFile'];
+addpath(genpath(model_dir));
 model_names = {'sim_autotrans','sf_car'};
 for ii = 1:length(model_names)
     % Load the model.
@@ -13,7 +13,7 @@ for ii = 1:length(model_names)
     ma = Simulink.ModelAdvisor.getModelAdvisor(model_names{ii});
     ma.selectCheckAll;
     ma.runCheck;
-    reportPath = [cd fileparts 'slprj\modeladvisor\' model_names{ii} fileparts 'report.html'];
+    reportPath = [cd filesep 'slprj\modeladvisor\' model_names{ii} filesep 'report.html'];
     % Commit the report.
     movefile(reportPath,file_path);
     
