@@ -15,7 +15,7 @@ for ii = 1:length(model_names)
     ma.runCheck;
     reportPath = [cd filesep 'slprj\modeladvisor\' model_names{ii} filesep 'report.html'];
     % Commit the report.
-    movefile(reportPath,file_path);
+    movefile(reportPath,[file_path filesep model_names{ii} '.html']);
     
 end
 [status,~] = dos('git commit -a -m "Jenkins Commit Model Advisor Report"');
