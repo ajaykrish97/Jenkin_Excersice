@@ -1,4 +1,6 @@
 function commitReport
+dos('git fetch');
+dos('git checkout runtest');
 % Run model advisor for sim_autotrans.
 file_path = fileparts(mfilename('fullpath'));
 report_dir = [file_path filesep 'Report'];
