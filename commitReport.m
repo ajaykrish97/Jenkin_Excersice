@@ -26,6 +26,6 @@ assert(status == 0,['Git commit Failed' newline message]);
 [~,message] = dos('git branch --show-current');
 
 % Current branch name.
-[status,message] = dos(['git push origin ' message]);
+[status,message] = dos(['git push origin HEAD:' message]);
 assert(status == 0,['Git push Failed' newline message]);
 end
