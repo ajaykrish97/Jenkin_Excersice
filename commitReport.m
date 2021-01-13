@@ -18,7 +18,7 @@ for ii = 1:length(model_names)
     reportPath = [cd filesep 'slprj\modeladvisor\' model_names{ii} filesep 'report.html'];
     % Commit the report.
     movefile(reportPath,[file_path filesep model_names{ii} '.html']);
-    
+    close_system(model_names{ii});
 end
 cd(file_path);
 [status,~] = dos('git add .');
@@ -26,7 +26,7 @@ cd(file_path);
 assert(status == 0,['Git commit Failed' newline message]);
 [~,message] = dos('git branch --show-current');
 
-% Current branch name.
-[status,message] = dos(['git push origin ' message]);
-assert(status == 0,['Git push Failed' newline message]);
+% % Current branch name.
+% [status,message] = dos(['git push origin ' message]);
+% assert(status == 0,['Git push Failed' newline message]);
 end
