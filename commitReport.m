@@ -24,5 +24,6 @@ cd(file_path);
 [status,~] = dos('git add .');
 [status,message] = dos('git commit -m "Jenkins Commit Model Advisor Report"');
 assert(status == 0,['Git commit Failed' newline message]);
-
+% Make a main HTML report and show the table in jenkins.
+makeHTMLReport(model_names);
 end
