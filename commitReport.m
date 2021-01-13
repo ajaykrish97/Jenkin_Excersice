@@ -20,12 +20,12 @@ for ii = 1:length(model_names)
     
 end
 cd(file_path);
-[status,~] = dos('git add .');
-[status,message] = dos('git commit -m "Jenkins Commit Model Advisor Report"');
-assert(status == 0,['Git commit Failed' newline message]);
-[~,message] = dos('git branch --show-current');
-
-% Current branch name.
-[status,message] = dos(['git push origin HEAD:' message]);
-assert(status == 0,['Git push Failed' newline message]);
+% [status,~] = dos('git add .');
+% [status,message] = dos('git commit -m "Jenkins Commit Model Advisor Report"');
+% assert(status == 0,['Git commit Failed' newline message]);
+% [~,message] = dos('git branch --show-current');
+% 
+% % Current branch name.
+% [status,message] = dos(['git push origin HEAD:' message]);
+% assert(status == 0,['Git push Failed' newline message]);
 end
