@@ -14,7 +14,7 @@ fprintf(mdlId,'<table border="1" cellpadding="5">\n');
 % Table header - system name,pass,fail,warning,not run.
 fprintf(mdlId,'<tr>\n');
 fprintf(mdlId,...
-    '<th>System Name</th>\n<th>Pass</th>\n<th>Fail</th>\n<th >Warnings</th>\n<th >Not Run</th>\n<th>Report Link</th>\n');
+    '<th>System Name</th>\n<th><img src = "Images/task_passed.png"></img>Pass</th>\n<th><img src = "Images/task_failed.png"></img>Fail</th>\n<th><img src = "Images/task_warning.png"></img>Warnings</th>\n<th >Not Run</th>\n<th>Report Link</th>\n');
 fprintf(mdlId,'</tr>\n');
 % Read the file one by one and collect the pass fail norun waning values.
 for ii = 1:length(model_names)
@@ -37,9 +37,9 @@ for ii = 1:length(model_names)
     modelAdvisorOutput = [endData{:}];
     fprintf(mdlId,'<tr>\n');
     fprintf(mdlId,'<td width="200" align="left">%s</td>\n',model_names{ii});
-    fprintf(mdlId,'<td width="200" align="left"><img src = "/Images/task_passed.png"></img>%s</td>\n',char(modelAdvisorOutput{1}));
-    fprintf(mdlId,'<td width="200" align="left"><img src = "/Images/task_failed.png"></img>%s</td>\n',char(modelAdvisorOutput{2}));
-    fprintf(mdlId,'<td width="200" align="left"><img src = "/Images/task_warning.png"></img>%s</td>\n',char(modelAdvisorOutput{3}));
+    fprintf(mdlId,'<td width="200" align="left">%s</td>\n',char(modelAdvisorOutput{1}));
+    fprintf(mdlId,'<td width="200" align="left">%s</td>\n',char(modelAdvisorOutput{2}));
+    fprintf(mdlId,'<td width="200" align="left">%s</td>\n',char(modelAdvisorOutput{3}));
     fprintf(mdlId,'<td width="200" align="left">%s</td>\n',char(modelAdvisorOutput{4}));
     % Report link.
     fprintf(mdlId,'<td width="200" align="left"><a href = %s>%s</a></td>\n',reportName,reportName);
