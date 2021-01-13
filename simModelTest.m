@@ -21,6 +21,5 @@ classdef simModelTest < matlab.unittest.TestCase
             ma.selectCheckAll;
             ma.runCheck;
         end
-        
     end
 end
