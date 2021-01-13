@@ -16,7 +16,13 @@ for ii = 1:length(model_names)
     reportPath = [cd fileparts 'slprj\modeladvisor\' model_names{ii} fileparts 'report.html'];
     % Commit the report.
     movefile(reportPath,file_path);
-    [status,~] = git(
+    
 end
+[status,~] = dos('git commit -a -m "Jenkins Commit Model Advisor Report"');
+assert(status == 0,'Git commit Failed');
+[~,message] = dos('git branch --show-current');
 
+% Current branch name.
+[status,message] = dos(['git push origin ' message]);
+assert(status == 0,'Git push Failed');
 end
