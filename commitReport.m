@@ -26,7 +26,7 @@ cd(file_path);
 assert(status == 0,['Git commit Failed' newline message]);
 [~,message] = dos('git branch --show-current');
 
-% % Current branch name.
-% [status,message] = dos(['git push origin ' message]);
-% assert(status == 0,['Git push Failed' newline message]);
+% Current branch name.
+[status,message] = dos(['git push origin ' message]);
+assert(status == 0,['Git push Failed' newline message]);
 end
