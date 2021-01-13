@@ -37,9 +37,9 @@ for ii = 1:length(model_names)
     modelAdvisorOutput = [endData{:}];
     fprintf(mdlId,'<tr>\n');
     fprintf(mdlId,'<td width="200" align="left">%s</td>\n',model_names{ii});
-    fprintf(mdlId,'<td width="200" align="left">%s</td>\n',char(modelAdvisorOutput{1}));
-    fprintf(mdlId,'<td width="200" align="left">%s</td>\n',char(modelAdvisorOutput{2}));
-    fprintf(mdlId,'<td width="200" align="left">%s</td>\n',char(modelAdvisorOutput{3}));
+    fprintf(mdlId,'<td width="200" align="left"><img src = "/Images/task_passed.png"></img>%s</td>\n',char(modelAdvisorOutput{1}));
+    fprintf(mdlId,'<td width="200" align="left"><img src = "/Images/task_failed.png"></img>%s</td>\n',char(modelAdvisorOutput{2}));
+    fprintf(mdlId,'<td width="200" align="left"><img src = "/Images/task_warning.png"></img>%s</td>\n',char(modelAdvisorOutput{3}));
     fprintf(mdlId,'<td width="200" align="left">%s</td>\n',char(modelAdvisorOutput{4}));
     % Report link.
     fprintf(mdlId,'<td width="200" align="left"><a href = %s>%s</a></td>\n',reportName,reportName);
