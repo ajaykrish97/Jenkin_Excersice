@@ -1,5 +1,5 @@
 function output = multiport(a,b,choice)
-
+% multiport switch.
 switch choice
     case 1
         output = a + b;
